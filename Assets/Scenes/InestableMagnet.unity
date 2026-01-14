@@ -128,15 +128,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 124549520}
-  - component: {fileID: 124549523}
   - component: {fileID: 124549519}
   - component: {fileID: 124549518}
   - component: {fileID: 124549521}
-  - component: {fileID: 124549522}
   - component: {fileID: 124549524}
   m_Layer: 0
   m_Name: MetallicCube
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,40 +238,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &124549522
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124549516}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &124549523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 124549516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab21460f369859444a9b11250f575584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtractObject
-  attractionForce: 10
 --- !u!65 &124549524
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -416,15 +380,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 713285419}
-  - component: {fileID: 713285425}
   - component: {fileID: 713285423}
   - component: {fileID: 713285422}
   - component: {fileID: 713285420}
-  - component: {fileID: 713285424}
   - component: {fileID: 713285426}
   m_Layer: 0
   m_Name: MetallicCylinder
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -528,40 +490,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713285418}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &713285424
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713285418}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &713285425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713285418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab21460f369859444a9b11250f575584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AtractObject
-  attractionForce: 20
 --- !u!64 &713285426
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -595,7 +523,7 @@ GameObject:
   - component: {fileID: 1114324205}
   m_Layer: 0
   m_Name: MetallicObjects
-  m_TagString: Untagged
+  m_TagString: Metal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,12 +681,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570574849}
+  - component: {fileID: 1570574853}
   - component: {fileID: 1570574852}
   - component: {fileID: 1570574848}
   - component: {fileID: 1570574847}
   - component: {fileID: 1570574846}
   - component: {fileID: 1570574850}
   - component: {fileID: 1570574851}
+  - component: {fileID: 1570574854}
   m_Layer: 0
   m_Name: PlayerSphere
   m_TagString: Player
@@ -781,11 +711,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1570574847
 MeshRenderer:
@@ -867,7 +797,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570574845}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDamping: 0.1
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -929,6 +859,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   playerRigidbody: {fileID: 1570574850}
+--- !u!114 &1570574853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570574845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab21460f369859444a9b11250f575584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AtractObject
+  attractionForce: 10
+--- !u!135 &1570574854
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570574845}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1589628808
 GameObject:
   m_ObjectHideFlags: 0
