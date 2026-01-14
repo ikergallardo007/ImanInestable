@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   playerRigidbody: {fileID: 1570574850}
+  atractionOn: 1
 --- !u!114 &1570574853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -872,6 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AtractObject
   attractionForce: 10
+  playerController: {fileID: 1570574852}
 --- !u!135 &1570574854
 SphereCollider:
   m_ObjectHideFlags: 0

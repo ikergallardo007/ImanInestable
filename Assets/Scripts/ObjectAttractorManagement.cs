@@ -5,11 +5,13 @@ public class ObjectAttractorManagement : MonoBehaviour
 {
     // Public Attributes
     public float attractionForce = 10f; // Force applied to attract the object towards the player
+    public PlayerController playerController; // Reference to the PlayerController script
 
     // Private Properties
     private Transform playerTransform; // Reference to the player's Transform component
     private int objectsCollected = 0; // Counter for collected objects
     private List<Rigidbody> attachedObjectsRigidbodies = new List<Rigidbody>(); // Array to hold attached objects
+    private int attractionMultiplier; // Multiplier for attraction force based on player state
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,9 +51,16 @@ public class ObjectAttractorManagement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Metal"))
         {
+            if (playerController.atractionOn)
+            {
+                attractionMultiplier = 1;
+            }
+            else
+            {
+                attractionMultiplier = -1;
+            }
             Vector3 direction = playerTransform.position - other.GetComponent<Transform>().position; // Direction vector from the object to the player
-            //print("Direction vector: " + direction + "Distance: " + direction.magnitude + "Force: " + (direction.normalized * attractionForce / direction.magnitude).magnitude);
-            other.GetComponent<Rigidbody>().AddForce(direction.normalized * attractionForce / direction.magnitude); // Apply attraction force inversely proportional to distance
+            other.GetComponent<Rigidbody>().AddForce(direction.normalized * attractionForce * attractionMultiplier / direction.magnitude); // Apply attraction force inversely proportional to distance
         }
     }
 
