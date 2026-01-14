@@ -686,9 +686,9 @@ GameObject:
   - component: {fileID: 1570574848}
   - component: {fileID: 1570574847}
   - component: {fileID: 1570574846}
+  - component: {fileID: 1570574854}
   - component: {fileID: 1570574850}
   - component: {fileID: 1570574851}
-  - component: {fileID: 1570574854}
   m_Layer: 0
   m_Name: PlayerSphere
   m_TagString: Player
@@ -1110,10 +1110,9 @@ MonoBehaviour:
   playerRigidbody: {fileID: 1570574850}
   metallicObject:
   - {fileID: 124549516}
-  - {fileID: 124549516}
   - {fileID: 713285418}
-  - {fileID: 713285418}
-  - {fileID: 713285418}
+  numberOfCubes: 12
+  numberOfCylindres: 8
 --- !u!4 &1973937424
 Transform:
   m_ObjectHideFlags: 0

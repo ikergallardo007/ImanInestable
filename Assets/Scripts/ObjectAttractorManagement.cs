@@ -6,25 +6,35 @@ public class ObjectAttractorManagement : MonoBehaviour
     // Public Attributes
     public float attractionForce = 10f; // Force applied to attract the object towards the player
     public PlayerController playerController; // Reference to the PlayerController script
+    public int maxCollectedObjects = 3; // Maximum number of objects that can be collected
 
     // Private Properties
     private Transform playerTransform; // Reference to the player's Transform component
     private int objectsCollected = 0; // Counter for collected objects
     private List<Rigidbody> attachedObjectsRigidbodies = new List<Rigidbody>(); // Array to hold attached objects
     private int attractionMultiplier; // Multiplier for attraction force based on player state
+    //public float oldRadius; // To store the original radius of the SphereCollider
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Find the player GameObject by its tag and get its Transform component
         playerTransform = GetComponent<Transform>();
+        //oldRadius = GetComponent<SphereCollider>().radius;
     }
 
     // FixedUpdate is called at a fixed interval and is independent of frame rate. It is used for physics calculations.
     private void FixedUpdate()
     {
+        //if (objectsCollected == (maxCollectedObjects))
+        //{
+        //    float oldRadius = GetComponent<SphereCollider>().radius;
+        //    GetComponent<SphereCollider>().radius = 2f; // Increase the radius of the trigger collider when near max capacity
+        //}
+        //if (objectsCollected != (maxCollectedObjects))
+        //    GetComponent<SphereCollider>().radius = oldRadius;
         // Apply a stronger repulsion force to all attached objects if more than 3 objects are collected
-        if (objectsCollected > 3)
+        if (objectsCollected > maxCollectedObjects)
         {
             foreach (Rigidbody rigidbody in attachedObjectsRigidbodies)
             {
