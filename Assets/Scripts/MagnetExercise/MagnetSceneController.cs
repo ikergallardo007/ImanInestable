@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class SceneController : MonoBehaviour
+public class MagnetSceneController
+    : MonoBehaviour
 {
     // Attributes
     public Rigidbody playerRigidbody; // Reference to the player's Rigidbody component

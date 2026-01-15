@@ -874,6 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AtractObject
   attractionForce: 10
   playerController: {fileID: 1570574852}
+  maxCollectedObjects: 3
 --- !u!135 &1570574854
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1089,7 +1090,7 @@ GameObject:
   - component: {fileID: 1973937424}
   - component: {fileID: 1973937423}
   m_Layer: 0
-  m_Name: SceneController
+  m_Name: MagnetSceneController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
