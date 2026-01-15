@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
+public class FloorCameraMovement : MonoBehaviour
 {
     // Public Attributes
     public Transform playerTransform; // Reference to the player's Transform component
@@ -19,6 +19,6 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         // Update the camera's position to follow the player with a fixed offset.
-        GetComponent<Transform>().position = new Vector3(playerTransform.position.x, cameraTransform.position.y, playerTransform.position.z - 11);
+        GetComponent<Transform>().position = new Vector3(playerTransform.position.x, cameraTransform.position.y, playerTransform.position.z);
     }
 }
