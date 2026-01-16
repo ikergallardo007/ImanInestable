@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 346673440}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071067, y: 0.00000008940697, z: -0.000000067055225, w: 0.7071069}
-  m_LocalPosition: {x: 50, y: 5, z: 50}
+  m_LocalPosition: {x: 25, y: 5, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -559,8 +559,8 @@ Transform:
   m_GameObject: {fileID: 712675728}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11, y: 0.5, z: -5}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalPosition: {x: 10, y: 0.5, z: -5}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 520267108}
@@ -1559,11 +1559,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f30b8092a4aae644b916ef3143262f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloorSceneController
+  exitDoor: {fileID: 712675728}
+  numberOfFakeBlocks: 60
   floorBlocks:
   - {fileID: 1089892667}
   - {fileID: 334491462}
   - {fileID: 228613035}
-  numberOfFakeBlocks: 60
 --- !u!1 &1697029267
 GameObject:
   m_ObjectHideFlags: 0
