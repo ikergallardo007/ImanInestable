@@ -6,6 +6,7 @@ public class FloorPlayerController : MonoBehaviour
 
     // Public Attributes
     public Rigidbody playerRigidbody; // Reference to the player's Rigidbody component
+    public Transform resetPoint; // Reference to the reset point Transform component
 
     // Private Properties
     private float force = 250f; // Force applied for movement
@@ -21,7 +22,13 @@ public class FloorPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (playerRigidbody.position.y < -5f)
+        {
+            // Reset the player's position if they fall below a certain height
+            playerRigidbody.position = resetPoint.position; // Reset position to the reset point
+            playerRigidbody.linearVelocity = Vector3.zero; // Reset velocity to avoid carrying over momentum
+            playerRigidbody.angularVelocity = Vector3.zero; // Reset angular velocity
+        }
     }
 
     // FixedUpdate is called at a fixed interval and is independent of frame rate
