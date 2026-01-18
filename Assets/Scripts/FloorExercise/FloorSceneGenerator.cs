@@ -62,7 +62,7 @@ public class FloorSceneGenerator : MonoBehaviour
                 {
                     selectedFakeBlockIndex = Random.Range(1, 3);
                     GameObject CreatedBlock = Instantiate(floorBlocks[selectedFakeBlockIndex], position, Quaternion.identity);
-                    CreatedBlock.name = "FakeBlock_" + blockCounter;
+                    CreatedBlock.name = "FakeBlock" + selectedFakeBlockIndex + "_" + blockCounter;
                 }
                 else
                 {

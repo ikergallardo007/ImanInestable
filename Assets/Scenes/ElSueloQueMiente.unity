@@ -128,10 +128,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 228613036}
+  - component: {fileID: 228613041}
   - component: {fileID: 228613040}
   - component: {fileID: 228613039}
   - component: {fileID: 228613038}
   - component: {fileID: 228613037}
+  - component: {fileID: 228613042}
+  - component: {fileID: 228613043}
   m_Layer: 0
   m_Name: FakeBlock2
   m_TagString: FakeBlock2
@@ -246,6 +249,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorFocusedBlock
   floorInspector: {fileID: 1130123361}
   blockRenderer: {fileID: 228613038}
+  inspectedBlock: 0
+--- !u!114 &228613041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228613035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb4a6c6d3b9f304abce965d49622309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorPlayerTouch
+  floorBlockTransform: {fileID: 228613036}
+--- !u!65 &228613042
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228613035}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.05, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &228613043
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228613035}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &334491462
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,10 +320,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 334491463}
+  - component: {fileID: 334491468}
   - component: {fileID: 334491467}
   - component: {fileID: 334491466}
   - component: {fileID: 334491465}
   - component: {fileID: 334491464}
+  - component: {fileID: 334491469}
+  - component: {fileID: 334491470}
   m_Layer: 0
   m_Name: FakeBlock
   m_TagString: FakeBlock1
@@ -373,6 +441,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorFocusedBlock
   floorInspector: {fileID: 1130123361}
   blockRenderer: {fileID: 334491465}
+  inspectedBlock: 0
+--- !u!114 &334491468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334491462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb4a6c6d3b9f304abce965d49622309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorPlayerTouch
+  floorBlockTransform: {fileID: 334491463}
+--- !u!65 &334491469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334491462}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.05, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &334491470
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334491462}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &346673440
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,10 +1052,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089892668}
+  - component: {fileID: 1089892674}
   - component: {fileID: 1089892672}
   - component: {fileID: 1089892671}
   - component: {fileID: 1089892670}
   - component: {fileID: 1089892669}
+  - component: {fileID: 1089892673}
   m_Layer: 0
   m_Name: RealBlock
   m_TagString: RealBlock
@@ -963,11 +1095,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1.05, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1089892670
 MeshRenderer:
@@ -1040,6 +1172,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FloorFocusedBlock
   floorInspector: {fileID: 1130123361}
   blockRenderer: {fileID: 1089892670}
+  inspectedBlock: 0
+--- !u!65 &1089892673
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089892667}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1089892674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089892667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb4a6c6d3b9f304abce965d49622309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloorPlayerTouch
+  floorBlockTransform: {fileID: 1089892668}
 --- !u!1 &1130123353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1225,7 @@ GameObject:
   - component: {fileID: 1130123359}
   m_Layer: 0
   m_Name: PlayerSphere
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

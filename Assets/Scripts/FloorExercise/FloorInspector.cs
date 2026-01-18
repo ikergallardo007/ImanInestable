@@ -49,16 +49,19 @@ public class FloorInspector : MonoBehaviour
                     {
                         case "RealBlock":
                             hit.transform.GetComponent<Renderer>().material.color = Color.green;
+                            hit.transform.GetComponent<FloorFocusedBlock>().inspectedBlock = true; // Set the block as inspected
                             break;
                         case "FakeBlock1":
                             hit.transform.GetComponent<Renderer>().material.color = Color.red;
+                            hit.transform.GetComponent<FloorFocusedBlock>().inspectedBlock = true; // Set the block as inspected
                             break;
                         case "FakeBlock2":
                             hit.transform.GetComponent<Renderer>().material.color = Color.orange;
+                            hit.transform.GetComponent<FloorFocusedBlock>().inspectedBlock = true; // Set the block as inspected
                             break;
                         default:
                             break;
-                }
+                    }
                 }
             }
             else

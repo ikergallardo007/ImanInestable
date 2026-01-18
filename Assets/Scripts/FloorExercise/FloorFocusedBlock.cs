@@ -5,6 +5,7 @@ public class FloorFocusedBlock : MonoBehaviour
     // Public Attributes
     public FloorInspector floorInspector;
     public Renderer blockRenderer;
+    public bool inspectedBlock = false;
 
     // Private Attributes
     private Color originalColor;
@@ -18,14 +19,18 @@ public class FloorFocusedBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (floorInspector.focusedBlock != null && floorInspector.focusedBlock.name == blockRenderer.name)
+        if (!inspectedBlock)
         {
-            print(blockRenderer.name + " is focused.");
-            blockRenderer.material.color = Color.blue;
-        } else
-        {
-            // Reset color when not focused
-            blockRenderer.material.color = originalColor;
+            if (floorInspector.focusedBlock != null && floorInspector.focusedBlock.name == blockRenderer.name)
+            {
+                print(blockRenderer.name + " is focused.");
+                blockRenderer.material.color = Color.blue;
+            }
+            else
+            {
+                // Reset color when not focused
+                blockRenderer.material.color = originalColor;
+            }
         }
-    }
+    }   
 }
