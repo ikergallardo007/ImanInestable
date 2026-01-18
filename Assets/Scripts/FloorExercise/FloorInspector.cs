@@ -5,9 +5,9 @@ using UnityEngine.Rendering;
 public class FloorInspector : MonoBehaviour
 {
     // Plublic Attributes
-    public Camera camera;
-    public Rigidbody selectedBlock = null;
-    public GameObject playerObject;
+    public Camera cameraPlayer; // Reference to the camera
+    public Transform focusedBlock = null; // Currently focused block
+    public GameObject playerObject; // Reference to the player object
 
     // Private Attributes
     private InputAction interactionAction; // Input action for changing magnetism
@@ -15,7 +15,7 @@ public class FloorInspector : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        interactionAction = InputSystem.actions.FindAction("Interact");
+        interactionAction = InputSystem.actions.FindAction("Interact"); // Find the interaction action
     }
 
     // Update is called once per frame
@@ -26,47 +26,44 @@ public class FloorInspector : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 mousePosition = Mouse.current.position.ReadValue();
+        Vector2 mousePosition = Mouse.current.position.ReadValue(); // Get the current mouse position
         RaycastHit hit;
 
-        Ray ray = camera.ScreenPointToRay(mousePosition);
+        // Create a ray from the camera through the mouse position
+        Ray ray = cameraPlayer.ScreenPointToRay(mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.DrawLine(camera.transform.position, hit.point, Color.blue);
-            Vector3 playerPosition = new Vector3(playerObject.transform.position.x, 0 , playerObject.transform.position.z);
-            float distance = Vector3.Distance(playerPosition, hit.point);
-            if (distance < 2.5)
+            Debug.DrawLine(cameraPlayer.transform.position, hit.point, Color.blue); // Draw a debug line to visualize the raycast
+            Vector3 playerPosition = new Vector3(playerObject.transform.position.x, 0 , playerObject.transform.position.z); // Player position on the XZ plane
+            float distance = Vector3.Distance(playerPosition, hit.point); // Distance from player to the hit point
+            if (distance < 2.5) // The player can only inspect blocks within 2.5 units
             {
-                //highlight the block when looked at
+                // Highlight the block when looked at
+                focusedBlock = hit.transform;
+
                 // Inspect the block when the interaction action is pressed
                 if (interactionAction.IsPressed())
                 {
-                    print("Inspecting the block.");
+                    // Change the color of the block based on its tag
                     switch (hit.transform.tag)
                     {
                         case "RealBlock":
                             hit.transform.GetComponent<Renderer>().material.color = Color.green;
-                            print("This is a Real Block.");
                             break;
                         case "FakeBlock1":
                             hit.transform.GetComponent<Renderer>().material.color = Color.red;
-                            print("This is a Fake Block Type 1.");
                             break;
                         case "FakeBlock2":
                             hit.transform.GetComponent<Renderer>().material.color = Color.orange;
-                            print("This is the Fake Block Type 2.");
                             break;
                         default:
-                            print("Unknown object.");
                             break;
                 }
                 }
-                //        if (selectedBlock != null)
-                //        {
-                //            selectedBlock.GetComponent<Renderer>().material.color = Color.white;
-                //        }
-                //        selectedBlock = hit.rigidbody;
-                //        selectedBlock.GetComponent<Renderer>().material.color = Color.red;
+            }
+            else
+            {
+                focusedBlock = null;
             }
         }
     }

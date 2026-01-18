@@ -26,19 +26,15 @@ public class FloorSceneGenerator : MonoBehaviour
         switch (exitDoorWallIndex)
         {
             case 0: // North Wall4
-                print("North Wall Selected");
                 exitDoor.transform.position = new Vector3((2 * exitDoorPosition) + 1,0.5f,50.4f);
                 break;
             case 1: // East Wall3
-                print("East Wall Selected");
                 exitDoor.transform.position = new Vector3(50.4f, 0.5f, (2 * exitDoorPosition) + 1);
                 break;
             case 2: // South Wall1
-                print("South Wall Selected");
                 exitDoor.transform.position = new Vector3((2 * exitDoorPosition) + 1, 0.5f, -0.4f);
                 break;
             case 3: // West Wall2
-                print("West Wall Selected");
                 exitDoor.transform.position = new Vector3(-0.4f, 0.5f, (2 * exitDoorPosition) + 1);
                 break;
         }
