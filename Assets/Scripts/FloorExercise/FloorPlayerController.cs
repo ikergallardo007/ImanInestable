@@ -10,23 +10,18 @@ public class FloorPlayerController : MonoBehaviour
     // Private Properties
     private float force = 250f; // Force applied for movement
     private InputAction moveAction; // Input action for movement
-    private InputAction interactionAction; // Input action for changing magnetism
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Get the move action from the Input System
         moveAction = InputSystem.actions.FindAction("Move");
-        interactionAction = InputSystem.actions.FindAction("Interact");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (interactionAction.triggered)
-        {
-            print("Escaning the block.");
-        }
+
     }
 
     // FixedUpdate is called at a fixed interval and is independent of frame rate
