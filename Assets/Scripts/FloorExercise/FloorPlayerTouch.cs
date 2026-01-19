@@ -10,18 +10,6 @@ public class FloorPlayerTouch : MonoBehaviour
     public bool timerStart = false; // Flag to indicate if the timer has started
     private float timer = 1f; // Timer to track time since the block was touched
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         // Check if the player touches the block
@@ -30,9 +18,11 @@ public class FloorPlayerTouch : MonoBehaviour
             // Perform actions based on the block's tag
             switch (floorBlockTransform.transform.tag)
             {
+                // Make FakeBlock1 fall immediately
                 case "FakeBlock1":
                     floorBlockTransform.GetComponent<Rigidbody>().isKinematic = false; // Make the block fall
                     break;
+                // Start the timer for FakeBlock2
                 case "FakeBlock2":
                     timerStart = true;
                     if (timerStart)

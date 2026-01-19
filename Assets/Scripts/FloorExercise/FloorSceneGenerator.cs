@@ -14,8 +14,8 @@ public class FloorSceneGenerator : MonoBehaviour
     private List<int> fakeBlockIndexes = new List<int>(); // Array to hold indices for floor block types
     private int blockCounter = 0; // Counter for the number of blocks placed
     private int selectedFakeBlockIndex = 1; // Index for selecting fake block type
-    private int exitDoorWallIndex;
-    private int exitDoorPosition;
+    private int exitDoorWallIndex; // Index for the wall where the exit door will be placed
+    private int exitDoorPosition; // Position along the wall for the exit door
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +23,7 @@ public class FloorSceneGenerator : MonoBehaviour
         // Select a random wall index for the exit door (0: North, 1: East, 2: South, 3: West) and a random position along that wall
         exitDoorWallIndex = Random.Range(0, 4);
         exitDoorPosition = Random.Range(0, 25);
+        // Position the exit door based on the selected wall and position
         switch (exitDoorWallIndex)
         {
             case 0: // North Wall4
@@ -57,25 +58,20 @@ public class FloorSceneGenerator : MonoBehaviour
             for (int j = 0; j < 25; j++)
             {
                 blockCounter++;
-                Vector3 position = new Vector3((i * 2.0f + 1f), -0.5f, (j * 2.0f + 1f));
+                Vector3 position = new Vector3((i * 2.0f + 1f), -0.5f, (j * 2.0f + 1f)); // Calculate block position
+                // Check if the current block index is in the list of fake block indexes
                 if (fakeBlockIndexes.Contains(blockCounter))
                 {
-                    selectedFakeBlockIndex = Random.Range(1, 3);
+                    selectedFakeBlockIndex = Random.Range(1, 3); // Randomly select between fake block types
                     GameObject CreatedBlock = Instantiate(floorBlocks[selectedFakeBlockIndex], position, Quaternion.identity);
                     CreatedBlock.name = "FakeBlock" + selectedFakeBlockIndex + "_" + blockCounter;
                 }
-                else
+                else // Create a real block
                 {
                     GameObject CreatedBlock = Instantiate(floorBlocks[0], position, Quaternion.identity);
                     CreatedBlock.name = "RealBlock_" + blockCounter;
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

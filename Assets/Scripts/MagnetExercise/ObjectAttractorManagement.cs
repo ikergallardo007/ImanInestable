@@ -55,11 +55,11 @@ public class ObjectAttractorManagement : MonoBehaviour
         {
             if (playerController.atractionOn)
             {
-                attractionMultiplier = 1;
+                attractionMultiplier = 1; // Set multiplier to 1 for attraction
             }
             else
             {
-                attractionMultiplier = -1;
+                attractionMultiplier = -1; // Set multiplier to -1 for repulsion
             }
             Vector3 direction = playerTransform.position - other.GetComponent<Transform>().position; // Direction vector from the object to the player
             other.GetComponent<Rigidbody>().AddForce(direction.normalized * attractionForce * attractionMultiplier / direction.magnitude); // Apply attraction force inversely proportional to distance
@@ -73,7 +73,7 @@ public class ObjectAttractorManagement : MonoBehaviour
         if (other.gameObject.CompareTag("Metal"))
         {
             objectsCollected--; // Decrement the counter when an object exits the trigger
-            attachedObjectsRigidbodies.Remove(other.GetComponent<Rigidbody>());
+            attachedObjectsRigidbodies.Remove(other.GetComponent<Rigidbody>()); // Remove the object's Rigidbody from the list
             print(other.gameObject.name + " exited. Total collected: " + objectsCollected);
         }
 

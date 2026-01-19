@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-
     // Public Attributes
     public Rigidbody playerRigidbody; // Reference to the player's Rigidbody component
     public bool atractionOn = true; // Flag to indicate if attraction is on
@@ -24,9 +23,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if the magnetism change action was triggered
         if (magnetismChange.triggered)
         {
-            atractionOn = !atractionOn;
+            atractionOn = !atractionOn; // Change attraction and repulsion state
         }
     }
 

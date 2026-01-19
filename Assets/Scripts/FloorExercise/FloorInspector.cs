@@ -18,12 +18,6 @@ public class FloorInspector : MonoBehaviour
         interactionAction = InputSystem.actions.FindAction("Interact"); // Find the interaction action
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue(); // Get the current mouse position
@@ -36,7 +30,9 @@ public class FloorInspector : MonoBehaviour
             Debug.DrawLine(cameraPlayer.transform.position, hit.point, Color.blue); // Draw a debug line to visualize the raycast
             Vector3 playerPosition = new Vector3(playerObject.transform.position.x, 0 , playerObject.transform.position.z); // Player position on the XZ plane
             float distance = Vector3.Distance(playerPosition, hit.point); // Distance from player to the hit point
-            if (distance < 2.5) // The player can only inspect blocks within 2.5 units
+
+            // The player can only inspect blocks within 2.5 units
+            if (distance < 2.5) 
             {
                 // Highlight the block when looked at
                 focusedBlock = hit.transform;

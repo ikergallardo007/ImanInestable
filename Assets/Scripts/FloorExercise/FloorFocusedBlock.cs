@@ -13,17 +13,18 @@ public class FloorFocusedBlock : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        originalColor = blockRenderer.material.color;
+        originalColor = blockRenderer.material.color; // Store the original color of the block
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Change color based on focus state only if not inspected
         if (!inspectedBlock)
         {
-            if (floorInspector.focusedBlock != null && floorInspector.focusedBlock.name == blockRenderer.name)
+            // Check if this block is focused
+            if (floorInspector.focusedBlock != null && floorInspector.focusedBlock.name == blockRenderer.name) 
             {
-                print(blockRenderer.name + " is focused.");
                 blockRenderer.material.color = Color.blue;
             }
             else

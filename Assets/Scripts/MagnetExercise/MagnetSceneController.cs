@@ -29,10 +29,4 @@ public class MagnetSceneController
             CreatedObject.SetActive(true);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
