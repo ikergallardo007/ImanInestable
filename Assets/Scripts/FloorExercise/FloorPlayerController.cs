@@ -9,7 +9,7 @@ public class FloorPlayerController : MonoBehaviour
     public Transform resetPoint; // Reference to the reset point Transform component
 
     // Private Properties
-    private float force = 250f; // Force applied for movement
+    private float force = 300f; // Force applied for movement
     private InputAction moveAction; // Input action for movement
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

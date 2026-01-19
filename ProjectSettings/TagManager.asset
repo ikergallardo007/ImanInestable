@@ -8,6 +8,7 @@ TagManager:
   - RealBlock
   - FakeBlock1
   - FakeBlock2
+  - ExitDoor
   layers:
   - Default
   - TransparentFX
